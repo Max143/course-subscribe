@@ -1,0 +1,5 @@
+
+
+{% for message in messages %}
+    <li {% if messgae.tags %} class="{{ message.tags }}"{% endif %}>{% if "html_safe" in message.tags %}{{ message|safe}}{% else %}{{ message }}{% endif %}</li>
+{% endfor %}

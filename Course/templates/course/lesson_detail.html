@@ -1,0 +1,22 @@
+{% extends 'course/base_courselist.html' %}
+
+
+{% block content %}
+<div class='container'>
+        <h1>Lesson Detail View</h1>
+        <hr>
+        <div class='row'>
+            <div class='col-sm-6 col-md-6'>
+                {% if object is not None %}
+                    <h3>{{ object.title }}</h3>
+                        <h2>All content Here ....</h2>
+                {% else %}
+                    <h3>Upgrade membership</h3>
+                    <p>To view this course you'll need to upgrade your membership</p>
+                    <br>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

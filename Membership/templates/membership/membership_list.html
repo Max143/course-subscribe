@@ -1,0 +1,52 @@
+{% extends 'course/base_courselist.html' %}
+
+{% block content %}
+
+
+   <!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+{% for object in object_list %}
+<section class="pricing py-5">
+  <div class="container">
+    <div class="row">
+      
+      
+      <!-- Pro Tier -->
+      <div class="col-lg-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-muted text-uppercase text-center">{{ object.membership_type }}</h5>
+            <h6 class="card-price text-center">${{ object.price }}<span class="period">/month</span></h6>
+            <hr>
+            <ul class="fa-ul">
+            <h4>Included Courses</h4>
+
+              {% for course in object.course_set.all %}
+              <li><span class="fa-li"><i class="fas fa-check"></i></span>{{ course.title }}</li>
+              {% endfor %}
+            </ul>
+
+
+             <!--Checking If membership type of user --->
+             {% if object.membership_type != 'Free' %}
+              <form method="POST" action="{% url 'memberships:select' %}">
+                {% csrf_token %}
+                {% if object.membership_type != current_membership %}
+                    <button class="btn btn-warning">Select</button>
+                {% else %}
+                    <small>This is your current membership</small>
+                {% endif %}
+                <center>
+                <input type="hidden" name="membership_type" value="{{ object.membership_type }}"></center>
+            </form>         
+            {% endif %} 
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endfor %}
+
+{% endblock %}

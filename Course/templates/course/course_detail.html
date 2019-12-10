@@ -1,0 +1,34 @@
+{% extends 'course/base_course.html' %}
+
+
+{% block title %} 
+    {{ object.title }}
+{% endblock title %}
+
+
+{% block course-detail %}
+    {{ object.title }}
+{% endblock course-detail %}
+
+
+{% block description %}
+    {{ object.description }}
+{% endblock description %}
+
+
+
+{% block Lesson %}
+
+        {% for lesson in object.lessons %}
+            <li class="justify-content-between d-flex">
+                <p>{{ lesson.title }}</p>
+                <a class="primary-btn text-uppercase" href="{{ lesson.get_absolute_url }}">View Details</a>
+            </li>
+        {% endfor %}
+{% endblock Lesson %} 
+
+ 
+    
+      
+   
+

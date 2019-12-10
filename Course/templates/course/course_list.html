@@ -1,0 +1,62 @@
+{% extends 'course/base_courselist.html' %}
+{% load static %}
+
+{% block heading %}
+    Our Popular Courses
+{% endblock heading %}
+
+{% block sub-heading %}
+    Get Our Premium Courses 
+{% endblock sub-heading %}
+
+{% block content %}
+
+    
+    <div class="row">
+
+          <!-- single course -->
+          <div class="col-lg-12">
+
+            <div class="owl-carousel active_course">
+                {% for obj in object_list %}
+              <div class="single_course">
+                <div class="course_head">
+                  <img class="img-fluid" src="{% static 'img/courses/c1.jpg' %}" alt=""/>
+                </div>
+
+                <div class="course_content">
+                  <span class="price">${{ obj.price }}</span>
+                  <span class="tag mb-4 d-inline-block">design</span>
+                  <h4 class="mb-3">
+                    <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a>
+                  </h4>
+                  <p>
+                    {{ obj.description }}
+                  </p>
+                  <div
+                    class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4"
+                  >
+                    <div class="authr_meta">
+                      <img src="{% static 'img/courses/author1.png' %}" alt="" />
+                      <span class="d-inline-block ml-2">Cameron</span>
+                    </div>
+                    <div class="mt-lg-0 mt-3">
+                      <span class="meta_info mr-4">
+                        <a href="#"> <i class="ti-user mr-2"></i>25 </a>
+                      </span>
+                      <span class="meta_info"
+                        ><a href="#"> <i class="ti-heart mr-2"></i>35 </a></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+                {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
