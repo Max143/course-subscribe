@@ -128,10 +128,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 if DEBUG:
-    STRIPE_PUBLISHABLE_KEY = 'pk_live_IoKLugdCspnq33LXsPHqARbP00jYWCnI25'
-    STRIPE_SECRET_KEY = 'sk_live_FJgqI15WCrila6Vsr51zjBhR00U4hHV7Qz'
+    STRIPE_PUBLISHABLE_KEY = 'publishable key'
+    STRIPE_SECRET_KEY ='your strip secret key'
 
 else:
     # live keys
-    STRIPE_PUBLISHABLE_KEY = 'pk_live_IoKLugdCspnq33LXsPHqARbP00jYWCnI25'
-    STRIPE_SECRET_KEY = 'sk_live_FJgqI15WCrila6Vsr51zjBhR00U4hHV7Qz'
+    STRIPE_PUBLISHABLE_KEY = 'publishable key'
+    STRIPE_SECRET_KEY = 'your strip secret key'
