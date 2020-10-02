@@ -12,6 +12,7 @@ class Course(models.Model):
     title = models.CharField(max_length=120)
     description = models.TextField()
     allowed_memberships = models.ManyToManyField(Membership)
+    timestamp = model.models.DateTimeField( auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -32,6 +33,7 @@ class Lesson(models.Model):
     position = models.IntegerField()
     video_url = models.CharField(max_length=200)
     thumbnail = models.ImageField()
+    timestamp = model.models.DateTimeField( auto_now_add=True)
 
     def __str__(self):
         return self.title
