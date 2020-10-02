@@ -10,9 +10,12 @@ def Home(request):
     
 class CourseListView(ListView):
     model = Course
+    template_name = 'course_list.html'
 
 class CourseDetailView(DetailView):
     model = Course
+    template_name = 'course_detail.html'
+
 
 
 class LesssonListView(View):
